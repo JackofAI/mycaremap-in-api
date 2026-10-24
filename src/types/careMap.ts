@@ -72,6 +72,7 @@ export interface CareProvider {
   city: string;
   clinic?: string;
   contact?: string;
+  address?: string;
   lastInteraction?: string;
   nextFollowUp?: string;
   notes?: string;
@@ -79,6 +80,10 @@ export interface CareProvider {
   relationshipStatus?: RelationshipStatus;
   isPrivateRecord?: boolean;
   isPrivateEntry?: boolean;
+  placeId?: string;
+  place_id?: string;
+  ratingScore?: number;
+  reviewCount?: number;
 }
 
 export interface CaregiverRelationship {
@@ -175,6 +180,9 @@ export interface Appointment {
   location: string;
   city: string;
   status: 'upcoming' | 'completed';
+  placeId?: string;
+  place_id?: string;
+  providerId?: string;
   previousVisitDate?: string;
   previousVisitDoctor?: string;
   previousVisitInstructions?: string;
@@ -478,6 +486,9 @@ export interface MeraCareBridgeParams {
   specialtyLabel?: string;
   recommendedServiceName?: string;
   doctorName?: string; // Referring doctor's public name if relevant
+  placeId?: string; // Google Place ID / Provider Place ID
+  place_id?: string;
+  providerId?: string;
 }
 
 // ----------------------------------------------------
@@ -499,6 +510,8 @@ export interface ConsumerEntitlementInfo {
 
 export interface GooglePlaceItem {
   id: string;
+  placeId?: string;
+  place_id?: string;
   name: string;
   category: string;
   address: string;

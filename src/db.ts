@@ -599,16 +599,48 @@ export function getProviders(): CareProvider[] {
   return getCareState().providers || [];
 }
 
+export function findProviderByPlaceId(placeId: string): CareProvider | undefined {
+  const state = getCareState();
+  return (state.providers || []).find(
+    p => (p.placeId && p.placeId === placeId) || (p.place_id && p.place_id === placeId)
+  );
+}
+
 export function addProvider(providerData: Omit<CareProvider, 'id'>): CareProvider {
   const state = getCareState();
+  const targetPlaceId = providerData.placeId || providerData.place_id;
+
+  // Match existing provider by placeId first (most reliable)
+  if (targetPlaceId) {
+    const existingIndex = (state.providers || []).findIndex(
+      p => (p.placeId && p.placeId === targetPlaceId) || (p.place_id && p.place_id === targetPlaceId)
+    );
+    if (existingIndex !== -1) {
+      const updated: CareProvider = {
+        ...state.providers[existingIndex],
+        ...providerData,
+        placeId: targetPlaceId,
+        place_id: targetPlaceId,
+        lastInteraction: new Date().toISOString().split('T')[0]
+      };
+      state.providers[existingIndex] = updated;
+      saveCareState(state);
+      logAudit('UPDATE_PROVIDER', 'user', { id: updated.id, name: updated.name, placeId: targetPlaceId });
+      return updated;
+    }
+  }
+
   const newProvider: CareProvider = {
     ...providerData,
-    id: `prov-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`
+    id: `prov-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+    placeId: targetPlaceId,
+    place_id: targetPlaceId,
+    lastInteraction: new Date().toISOString().split('T')[0]
   };
 
   state.providers = [newProvider, ...(state.providers || [])];
   saveCareState(state);
-  logAudit('ADD_PROVIDER', 'user', { name: newProvider.name, specialty: newProvider.specialty });
+  logAudit('ADD_PROVIDER', 'user', { name: newProvider.name, specialty: newProvider.specialty, placeId: targetPlaceId });
   return newProvider;
 }
 

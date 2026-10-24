@@ -64,6 +64,8 @@ async function fetchFromPlacesApiNew(
 
   return data.places.slice(0, 15).map((p: any) => ({
     id: p.id || `gplace-${Math.random().toString(36).slice(2, 9)}`,
+    placeId: p.id,
+    place_id: p.id,
     name: p.displayName?.text || 'Healthcare Provider',
     category: p.primaryType?.toLowerCase().includes('physio')
       ? 'Physiotherapy'
@@ -114,6 +116,8 @@ async function fetchFromLegacyPlacesApi(
 
   return data.results.slice(0, 15).map((r: any) => ({
     id: r.place_id || `gplace-${Math.random().toString(36).slice(2, 9)}`,
+    placeId: r.place_id,
+    place_id: r.place_id,
     name: r.name,
     category: r.types?.includes('physiotherapist')
       ? 'Physiotherapy'

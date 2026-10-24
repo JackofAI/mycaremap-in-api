@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express';
 import {
   getProviders,
+  findProviderByPlaceId,
   addProvider,
   updateProvider,
   deleteProvider
@@ -24,14 +25,50 @@ providersRouter.get('/', (req: Request, res: Response) => {
   }
 });
 
-// POST /api/providers - Add a new provider to care team
+// GET /api/providers/by-place/:placeId - Look up provider by Google Place ID
+providersRouter.get('/by-place/:placeId', (req: Request, res: Response) => {
+  try {
+    const { placeId } = req.params;
+    const provider = findProviderByPlaceId(placeId);
+    if (!provider) {
+      res.status(404).json({ success: false, error: 'Provider not found with given Place ID' });
+      return;
+    }
+    res.json({ success: true, data: provider });
+  } catch (error) {
+    console.error('Error looking up provider by Place ID:', error);
+    res.status(500).json({ success: false, error: 'Failed to look up provider by Place ID' });
+  }
+});
+
+// POST /api/providers - Add a new provider to care team (idempotent on placeId)
 providersRouter.post('/', (req: Request, res: Response) => {
   try {
-    const { name, role, specialty, city, clinic, contact, lastInteraction, nextFollowUp, notes, category, relationshipStatus } = req.body;
+    const {
+      name,
+      role,
+      specialty,
+      city,
+      clinic,
+      contact,
+      address,
+      placeId,
+      place_id,
+      ratingScore,
+      reviewCount,
+      lastInteraction,
+      nextFollowUp,
+      notes,
+      category,
+      relationshipStatus
+    } = req.body;
+
     if (!name || !specialty) {
       res.status(400).json({ success: false, error: 'Provider name and specialty are required' });
       return;
     }
+
+    const targetPlaceId = placeId || place_id;
 
     const newProvider = addProvider({
       name,
@@ -40,7 +77,12 @@ providersRouter.post('/', (req: Request, res: Response) => {
       city: city || 'Ahmedabad',
       clinic,
       contact,
-      lastInteraction,
+      address,
+      placeId: targetPlaceId,
+      place_id: targetPlaceId,
+      ratingScore,
+      reviewCount,
+      lastInteraction: lastInteraction || new Date().toISOString().split('T')[0],
       nextFollowUp,
       notes,
       category: category || 'doctor',
@@ -50,7 +92,7 @@ providersRouter.post('/', (req: Request, res: Response) => {
 
     res.status(201).json({
       success: true,
-      message: 'Care provider added to Care Team successfully',
+      message: 'Care provider saved to Care Team successfully',
       data: newProvider
     });
   } catch (error) {
