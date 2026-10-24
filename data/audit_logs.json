@@ -1,0 +1,548 @@
+[
+  {
+    "id": "audit-init",
+    "timestamp": "2026-10-20T11:00:00.000Z",
+    "action": "SYSTEM_INIT",
+    "actor": "system",
+    "details": {
+      "message": "Initialized database with clean production state"
+    }
+  },
+  {
+    "id": "audit-1792475421627-04prg",
+    "timestamp": "2026-10-20T05:50:21.627Z",
+    "action": "UPDATE_CARE_STATE",
+    "actor": "user",
+    "details": {
+      "profileId": "usr-1792474039833",
+      "name": ""
+    }
+  },
+  {
+    "id": "audit-1792475421627-td2z9",
+    "timestamp": "2026-10-20T05:50:21.627Z",
+    "action": "ADD_PROVIDER",
+    "actor": "user",
+    "details": {
+      "name": "Dr. Keyur Parikh",
+      "specialty": "Cardiologist"
+    }
+  },
+  {
+    "id": "audit-1792475431430-i87lg",
+    "timestamp": "2026-10-20T05:50:31.430Z",
+    "action": "UPDATE_CARE_STATE",
+    "actor": "user",
+    "details": {
+      "profileId": "usr-1792474039833",
+      "name": ""
+    }
+  },
+  {
+    "id": "audit-1792475431430-3ynd6",
+    "timestamp": "2026-10-20T05:50:31.430Z",
+    "action": "DELETE_PROVIDER",
+    "actor": "user",
+    "details": {
+      "id": "prov-1792475421626-myrw"
+    }
+  },
+  {
+    "id": "audit-1792483459310-ncxbu",
+    "timestamp": "2026-10-20T08:04:19.310Z",
+    "action": "UPDATE_CARE_STATE",
+    "actor": "user",
+    "details": {
+      "profileId": "usr-1792483459309",
+      "name": "Avadh"
+    }
+  },
+  {
+    "id": "audit-1792483459311-hfeou",
+    "timestamp": "2026-10-20T08:04:19.311Z",
+    "action": "CREATE_FRESH_USER",
+    "actor": "user",
+    "details": {
+      "name": "Avadh",
+      "city": "Ahmedabad"
+    }
+  },
+  {
+    "id": "audit-1792483459314-gylf9",
+    "timestamp": "2026-10-20T08:04:19.314Z",
+    "action": "UPDATE_CARE_STATE",
+    "actor": "user",
+    "details": {
+      "profileId": "user-1792483459289",
+      "name": "Avadh"
+    }
+  },
+  {
+    "id": "audit-1792483464244-a5v3u",
+    "timestamp": "2026-10-20T08:04:24.244Z",
+    "action": "UPDATE_CARE_STATE",
+    "actor": "user",
+    "details": {
+      "profileId": "user-1792483459289",
+      "name": "Avadh"
+    }
+  },
+  {
+    "id": "audit-1792483469134-op4ow",
+    "timestamp": "2026-10-20T08:04:29.134Z",
+    "action": "UPDATE_CARE_STATE",
+    "actor": "user",
+    "details": {
+      "profileId": "usr-1792483469132",
+      "name": "Avadh"
+    }
+  },
+  {
+    "id": "audit-1792483469134-6ldof",
+    "timestamp": "2026-10-20T08:04:29.134Z",
+    "action": "CREATE_FRESH_USER",
+    "actor": "user",
+    "details": {
+      "name": "Avadh",
+      "city": "Ahmedabad"
+    }
+  },
+  {
+    "id": "audit-1792483469135-ddgcb",
+    "timestamp": "2026-10-20T08:04:29.135Z",
+    "action": "USER_REGISTERED",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t",
+      "name": "Avadh"
+    }
+  },
+  {
+    "id": "audit-1792483469142-ecevh",
+    "timestamp": "2026-10-20T08:04:29.142Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792483469950-n4q4j",
+    "timestamp": "2026-10-20T08:04:29.950Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792483484573-gq77s",
+    "timestamp": "2026-10-20T08:04:44.573Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792483484575-krxtj",
+    "timestamp": "2026-10-20T08:04:44.575Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792483484577-wjxyv",
+    "timestamp": "2026-10-20T08:04:44.577Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792483595033-03y22",
+    "timestamp": "2026-10-20T08:06:35.033Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792483595036-dxlvi",
+    "timestamp": "2026-10-20T08:06:35.036Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792483595039-r8vx7",
+    "timestamp": "2026-10-20T08:06:35.039Z",
+    "action": "UPDATE_CARE_STATE",
+    "actor": "user",
+    "details": {
+      "profileId": "usr-1792483469132",
+      "name": "Avadh"
+    }
+  },
+  {
+    "id": "audit-1792483595039-ji50w",
+    "timestamp": "2026-10-20T08:06:35.039Z",
+    "action": "ADD_PROVIDER",
+    "actor": "user",
+    "details": {
+      "name": "HEALTH HOSPITAL",
+      "specialty": "Hospital & Clinic"
+    }
+  },
+  {
+    "id": "audit-1792484734003-6y94p",
+    "timestamp": "2026-10-20T08:25:34.003Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792484734008-5zkd0",
+    "timestamp": "2026-10-20T08:25:34.008Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792484784666-l6wro",
+    "timestamp": "2026-10-20T08:26:24.666Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792484784670-gqyix",
+    "timestamp": "2026-10-20T08:26:24.670Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792486371829-r2y14",
+    "timestamp": "2026-10-20T08:52:51.829Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792486371833-0uku8",
+    "timestamp": "2026-10-20T08:52:51.833Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792487867611-caghv",
+    "timestamp": "2026-10-20T09:17:47.611Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792487867617-pd6re",
+    "timestamp": "2026-10-20T09:17:47.617Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792487873965-aj57c",
+    "timestamp": "2026-10-20T09:17:53.965Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792487887698-1x755",
+    "timestamp": "2026-10-20T09:18:07.698Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792487887703-joikt",
+    "timestamp": "2026-10-20T09:18:07.703Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792488439733-los03",
+    "timestamp": "2026-10-20T09:27:19.733Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792488439738-iioh0",
+    "timestamp": "2026-10-20T09:27:19.738Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792488538271-ryoe2",
+    "timestamp": "2026-10-20T09:28:58.271Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792488538276-qyxam",
+    "timestamp": "2026-10-20T09:28:58.276Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792502385427-9nmdr",
+    "timestamp": "2026-10-20T13:19:45.427Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792502385432-ig84m",
+    "timestamp": "2026-10-20T13:19:45.432Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792502966930-usmrx",
+    "timestamp": "2026-10-20T13:29:26.930Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792502966935-7k2ar",
+    "timestamp": "2026-10-20T13:29:26.935Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503121706-awxhh",
+    "timestamp": "2026-10-20T13:32:01.706Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503121710-duhy3",
+    "timestamp": "2026-10-20T13:32:01.710Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503134001-q0ehh",
+    "timestamp": "2026-10-20T13:32:14.002Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503134006-ya00t",
+    "timestamp": "2026-10-20T13:32:14.006Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503142032-p10ju",
+    "timestamp": "2026-10-20T13:32:22.032Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503142048-gqfa0",
+    "timestamp": "2026-10-20T13:32:22.048Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503167161-5tayx",
+    "timestamp": "2026-10-20T13:32:47.161Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503167165-zub3t",
+    "timestamp": "2026-10-20T13:32:47.165Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503178506-or3ft",
+    "timestamp": "2026-10-20T13:32:58.506Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503295792-caf24",
+    "timestamp": "2026-10-20T13:34:55.792Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792503295796-hmw9r",
+    "timestamp": "2026-10-20T13:34:55.796Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792504064662-o8r7u",
+    "timestamp": "2026-10-20T13:47:44.662Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792504064666-j4jdq",
+    "timestamp": "2026-10-20T13:47:44.666Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792504083327-p4vhz",
+    "timestamp": "2026-10-20T13:48:03.327Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792505160035-nplkn",
+    "timestamp": "2026-10-20T14:06:00.035Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792505160040-vdoh1",
+    "timestamp": "2026-10-20T14:06:00.040Z",
+    "action": "SAVE_USER_CARE_STATE",
+    "actor": "avadh@gmail.com",
+    "details": {
+      "userId": "usr-1792483469132-sfc0t"
+    }
+  },
+  {
+    "id": "audit-1792660077521-tz5i7",
+    "timestamp": "2026-10-22T09:07:57.521Z",
+    "action": "UPDATE_CARE_STATE",
+    "actor": "user",
+    "details": {
+      "profileId": "user-1792660077495",
+      "name": ""
+    }
+  },
+  {
+    "id": "audit-1792660077524-ep7rd",
+    "timestamp": "2026-10-22T09:07:57.524Z",
+    "action": "UPDATE_CARE_STATE",
+    "actor": "user",
+    "details": {
+      "profileId": "usr-1792660077523",
+      "name": ""
+    }
+  },
+  {
+    "id": "audit-1792660077525-v6tvy",
+    "timestamp": "2026-10-22T09:07:57.525Z",
+    "action": "CREATE_FRESH_USER",
+    "actor": "user",
+    "details": {
+      "name": "",
+      "city": ""
+    }
+  }
+]

@@ -1,0 +1,47 @@
+name: mycaremap-in-api
+region: blr1
+services:
+  - name: mycaremap-in-api
+    github:
+      branch: main
+      deploy_on_push: true
+      repo: JackofAI/mycaremap-in-api
+    source_dir: /
+    build_command: npm run build
+    run_command: npm start
+    environment_slug: node-js
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    http_port: 8080
+    envs:
+      - key: NODE_ENV
+        value: production
+        scope: RUN_AND_BUILD_TIME
+      - key: HOST
+        value: "0.0.0.0"
+        scope: RUN_AND_BUILD_TIME
+      - key: PORT
+        value: "8080"
+        scope: RUN_AND_BUILD_TIME
+      - key: ALLOWED_ORIGIN
+        value: "https://mycaremap.in"
+        scope: RUN_AND_BUILD_TIME
+      - key: FRONTEND_URL
+        value: "https://mycaremap.in"
+        scope: RUN_AND_BUILD_TIME
+      - key: MERACARE_API_URL
+        value: "https://api.meracare.in"
+        scope: RUN_AND_BUILD_TIME
+      - key: GEMINI_API_KEY
+        value: ""
+        scope: RUN_AND_BUILD_TIME
+        type: SECRET
+    health_check:
+      http_path: /api/health
+      initial_delay_seconds: 15
+      period_seconds: 10
+      timeout_seconds: 5
+      failure_threshold: 3
+      success_threshold: 1
+    routes:
+      - path: /

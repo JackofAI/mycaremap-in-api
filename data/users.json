@@ -1,0 +1,225 @@
+[
+  {
+    "id": "usr-1792483469132-sfc0t",
+    "name": "Avadh",
+    "emailOrPhone": "avadh@gmail.com",
+    "passwordHash": "dc77de52ebf78b08a0b5d22bbaacb108e572584240753fbb26bee39f8e0d0bc8",
+    "token": "mcm_tk_usr-1792483469132-sfc0t_47051a063879664419dc24f30da70743",
+    "careState": {
+      "profile": {
+        "id": "usr-1792483469132-sfc0t",
+        "createdAt": "2026-10-20",
+        "isDemo": false,
+        "motivations": [
+          "Remember follow-ups",
+          "Keep routine care organised",
+          "Know what is coming next"
+        ],
+        "name": "Avadh",
+        "age": 27,
+        "city": "Ahmedabad",
+        "roleTag": "Self",
+        "roleTagHi": "खुद (Self)"
+      },
+      "activeFamilyMemberId": "self-1",
+      "familyMembers": [
+        {
+          "id": "self-1",
+          "name": "Avadh",
+          "relationTitle": "Self",
+          "relationTitleHi": "खुद (Self)",
+          "age": 27,
+          "city": "Ahmedabad",
+          "conditionsSummary": "",
+          "conditionsSummaryHi": "",
+          "activeMedications": [],
+          "isDemoPrimary": false,
+          "isElderly": false,
+          "careCircle": [],
+          "signals": [],
+          "nextTasks": [],
+          "inbox": []
+        }
+      ],
+      "globalInbox": [],
+      "territories": {
+        "routine": {
+          "title": "Routine Care",
+          "description": "Primary care, dental, vision, and regular health checkups.",
+          "items": [
+            {
+              "id": "fresh-gp",
+              "territoryId": "routine",
+              "title": "Primary Doctor / GP",
+              "subtitle": "Shubham Sukhadiya (Ahmedabad)",
+              "status": "covered"
+            },
+            {
+              "id": "fresh-dental",
+              "territoryId": "routine",
+              "title": "Dental Care",
+              "subtitle": "Not yet recorded",
+              "status": "needs_organising",
+              "actionPrompt": "Add your last dental visit or dentist"
+            },
+            {
+              "id": "fresh-vision",
+              "territoryId": "routine",
+              "title": "Vision Care",
+              "subtitle": "Not yet recorded",
+              "status": "needs_organising",
+              "actionPrompt": "Add the date of your last eye check"
+            }
+          ]
+        },
+        "preventive": {
+          "title": "Preventive Care",
+          "description": "Screenings, annual wellness discussions, and routine panels.",
+          "items": [
+            {
+              "id": "fresh-preventive-1",
+              "territoryId": "preventive",
+              "title": "Annual Health Check",
+              "subtitle": "Routine checkup discussion",
+              "status": "needs_organising",
+              "actionPrompt": "Record your most recent health checkup"
+            }
+          ]
+        },
+        "ongoing": {
+          "title": "Ongoing Care",
+          "description": "Regular medicines, health factors, and current therapies.",
+          "items": [
+            {
+              "id": "fresh-meds",
+              "territoryId": "ongoing",
+              "title": "Current Medicines Reviewed",
+              "subtitle": "No chronic medicines recorded",
+              "status": "needs_organising",
+              "actionPrompt": "Review current vitamins or regular medicines"
+            }
+          ]
+        },
+        "specialists": {
+          "title": "Specialists",
+          "description": "Consultations, specialist doctors, and ongoing specialist notes.",
+          "items": []
+        },
+        "commitments": {
+          "title": "Care Commitments",
+          "description": "Important follow-ups, pending tests, and promised reviews.",
+          "items": [
+            {
+              "id": "item-commit-doctor-1",
+              "territoryId": "commitments",
+              "title": "Body pain",
+              "subtitle": "Advised by Shubham Sukhadiya",
+              "status": "needs_attention",
+              "dueDate": "In 4 weeks"
+            }
+          ]
+        },
+        "team": {
+          "title": "Care Team",
+          "description": "Your doctors, dentists, and health professionals.",
+          "items": []
+        },
+        "records": {
+          "title": "Records & History",
+          "description": "Prescriptions, lab PDFs, and milestone care moments.",
+          "items": []
+        },
+        "emergency": {
+          "title": "Emergency Readiness",
+          "description": "Key health details and emergency contact.",
+          "items": [
+            {
+              "id": "fresh-emg",
+              "territoryId": "emergency",
+              "title": "Emergency Contact & Health Card",
+              "subtitle": "Needs primary contact and blood group",
+              "status": "needs_organising",
+              "actionPrompt": "Add emergency contact details"
+            }
+          ]
+        }
+      },
+      "commitments": [
+        {
+          "id": "commit-doctor-advice-1",
+          "title": "Body pain",
+          "category": "Follow-up",
+          "createdAt": "2026-10-20",
+          "dueDate": "In 4 weeks",
+          "suggestedBy": "Shubham Sukhadiya",
+          "whyItMatters": "Doctor recommendation recorded during first-use setup.",
+          "status": "open",
+          "notes": "Captured via task-led onboarding."
+        }
+      ],
+      "providers": [
+        {
+          "id": "prov-1792504083316-pb0c",
+          "name": "Aarambh Neuro & Physical Rehabilitation",
+          "role": "Rehabilitation Centre",
+          "specialty": "Rehabilitation Centre",
+          "city": "Ahmedabad, Thaltej",
+          "clinic": "Aarambh Neuro & Physical Rehabilitation, Thaltej",
+          "contact": "+91 79 4005 8821",
+          "category": "doctor",
+          "relationshipStatus": "regular",
+          "isPrivateRecord": true,
+          "notes": "Discovered on MeraCare.in. Address: Ground Floor, Maple Trade Centre, Surdhara Circle, Thaltej."
+        }
+      ],
+      "appointments": [
+        {
+          "id": "appt-1792487873952-9u76",
+          "providerName": "RV Clinic - Family Doctor & Home Visit General Physician in Gota, Sola & Nearby Areas Doorstep AHMEDABAD, Home Treatment Dr",
+          "specialty": "General Healthcare",
+          "date": "2026-10-20",
+          "time": "10:00 AM",
+          "location": "RV Clinic - Family Doctor & Home Visit General Physician in Gota, Sola & Nearby Areas Doorstep AHMEDABAD, Home Treatment Dr, Ahmedabad",
+          "city": "Ahmedabad, Ahmedabad",
+          "status": "upcoming",
+          "notes": "Discovered on MeraCare.in. Address: 22, skylon residency, near, Prasang Party Plot Rd, Chanakyapuri, Ahmedabad, Gujarat 380061, India.",
+          "isCompleted": false
+        },
+        {
+          "id": "appt-1792504083316-1lug",
+          "providerName": "Aarambh Neuro & Physical Rehabilitation",
+          "specialty": "Rehabilitation Centre",
+          "date": "2026-10-20",
+          "time": "10:00 AM",
+          "location": "Aarambh Neuro & Physical Rehabilitation, Thaltej",
+          "city": "Ahmedabad, Thaltej",
+          "status": "upcoming",
+          "notes": "Discovered on MeraCare.in. Address: Ground Floor, Maple Trade Centre, Surdhara Circle, Thaltej.",
+          "isCompleted": false
+        }
+      ],
+      "history": [],
+      "records": [],
+      "doctorInstructions": [],
+      "activityLogs": [],
+      "betweenVisitObservations": [],
+      "emergencyCard": {
+        "allergies": [],
+        "currentMedicines": [],
+        "importantConditions": [],
+        "primaryDoctorContact": "",
+        "name": "Avadh",
+        "age": 27,
+        "bloodGroup": "A-",
+        "primaryDoctor": "Not assigned",
+        "emergencyContactName": "Not set",
+        "emergencyContactRelation": "",
+        "emergencyContactPhone": "",
+        "lastUpdated": "2026-10-20"
+      },
+      "trustedContacts": []
+    },
+    "createdAt": "2026-10-20T08:04:29.135Z",
+    "lastLoginAt": "2026-10-20T08:04:29.135Z"
+  }
+]

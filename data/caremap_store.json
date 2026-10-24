@@ -1,0 +1,197 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-10-22T09:07:57.528Z",
+  "careState": {
+    "profile": {
+      "id": "usr-1792660077523",
+      "name": "",
+      "age": 0,
+      "city": "",
+      "createdAt": "2026-10-22",
+      "isDemo": false,
+      "motivations": [
+        "Keep routine care organised",
+        "Remember follow-ups",
+        "Know what is coming next"
+      ]
+    },
+    "activeFamilyMemberId": "self-1",
+    "familyMembers": [
+      {
+        "id": "self-1",
+        "name": "",
+        "relationTitle": "Self",
+        "relationTitleHi": "खुद (Self)",
+        "age": 0,
+        "city": "",
+        "conditionsSummary": "",
+        "conditionsSummaryHi": "",
+        "activeMedications": [],
+        "isDemoPrimary": false,
+        "isElderly": false,
+        "careCircle": [],
+        "signals": [],
+        "nextTasks": [],
+        "inbox": []
+      }
+    ],
+    "globalInbox": [],
+    "territories": {
+      "routine": {
+        "title": "Routine Care",
+        "description": "Primary care, dental, vision, and regular health checkups.",
+        "items": [
+          {
+            "id": "fresh-gp",
+            "territoryId": "routine",
+            "title": "Primary Care Doctor",
+            "subtitle": "Not yet recorded",
+            "status": "needs_organising",
+            "actionPrompt": "Add your regular doctor or clinic"
+          },
+          {
+            "id": "fresh-dental",
+            "territoryId": "routine",
+            "title": "Dental Care",
+            "subtitle": "Not yet recorded",
+            "status": "needs_organising",
+            "actionPrompt": "Add your last dental visit or dentist"
+          },
+          {
+            "id": "fresh-vision",
+            "territoryId": "routine",
+            "title": "Vision Care",
+            "subtitle": "Not yet recorded",
+            "status": "needs_organising",
+            "actionPrompt": "Add the date of your last eye check"
+          }
+        ]
+      },
+      "preventive": {
+        "title": "Preventive Care",
+        "description": "Screenings, annual wellness discussions, and routine panels.",
+        "items": [
+          {
+            "id": "fresh-preventive-1",
+            "territoryId": "preventive",
+            "title": "Annual Health Check",
+            "subtitle": "Routine checkup discussion",
+            "status": "needs_organising",
+            "actionPrompt": "Record your most recent health checkup"
+          }
+        ]
+      },
+      "ongoing": {
+        "title": "Ongoing Care",
+        "description": "Regular medicines, health factors, and current therapies.",
+        "items": [
+          {
+            "id": "fresh-meds",
+            "territoryId": "ongoing",
+            "title": "Current Medicines Reviewed",
+            "subtitle": "No chronic medicines recorded",
+            "status": "needs_organising",
+            "actionPrompt": "Review current vitamins or regular medicines"
+          }
+        ]
+      },
+      "specialists": {
+        "title": "Specialists",
+        "description": "Consultations, specialist doctors, and ongoing specialist notes.",
+        "items": []
+      },
+      "commitments": {
+        "title": "Care Commitments",
+        "description": "Important follow-ups, pending tests, and promised reviews.",
+        "items": []
+      },
+      "team": {
+        "title": "Care Team",
+        "description": "Your doctors, dentists, and health professionals.",
+        "items": []
+      },
+      "records": {
+        "title": "Records & History",
+        "description": "Prescriptions, lab PDFs, and milestone care moments.",
+        "items": []
+      },
+      "emergency": {
+        "title": "Emergency Readiness",
+        "description": "Key health details and emergency contact.",
+        "items": [
+          {
+            "id": "fresh-emg",
+            "territoryId": "emergency",
+            "title": "Emergency Contact & Health Card",
+            "subtitle": "Needs primary contact and blood group",
+            "status": "needs_organising",
+            "actionPrompt": "Add emergency contact details"
+          }
+        ]
+      }
+    },
+    "commitments": [],
+    "providers": [],
+    "appointments": [],
+    "history": [],
+    "records": [],
+    "doctorInstructions": [],
+    "activityLogs": [],
+    "betweenVisitObservations": [],
+    "emergencyCard": {
+      "name": "",
+      "age": 0,
+      "bloodGroup": "Not recorded",
+      "allergies": [],
+      "currentMedicines": [],
+      "importantConditions": [],
+      "primaryDoctor": "Not assigned",
+      "primaryDoctorContact": "",
+      "emergencyContactName": "Not set",
+      "emergencyContactRelation": "",
+      "emergencyContactPhone": "",
+      "lastUpdated": "2026-10-22"
+    },
+    "trustedContacts": []
+  },
+  "analytics": {
+    "visitors": 7,
+    "checksStarted": 2,
+    "checksCompleted": 1,
+    "mapsSaved": 1,
+    "commitmentsCreated": 0,
+    "providersAdded": 0,
+    "recordsAdded": 0,
+    "prepUsed": 16,
+    "afterUpdateCompleted": 0,
+    "reviewsCompleted": 0,
+    "commitmentsCompleted": 0,
+    "signalsInspected": 1,
+    "familySwitches": 1,
+    "voiceNotesAdded": 0,
+    "whatsappSimulated": 0,
+    "doctorSummaryGenerated": 0,
+    "meraCareImpressions": 0,
+    "meraCareClicks": 8,
+    "meraCareReturns": 11,
+    "meraCareCategoriesClicked": {
+      "physiotherapy": 0,
+      "specialist": 0,
+      "diagnostics": 0,
+      "homecare": 0
+    },
+    "meraCareSourcesClicked": {},
+    "care_map_created": 1,
+    "existing_provider_added": 1,
+    "consultation_recorded": 1,
+    "care_instruction_saved": 1,
+    "followup_updated": 0,
+    "visit_summary_prepared": 0,
+    "family_care_map_created": 0,
+    "meracare_link_viewed": 0,
+    "meracare_link_clicked": 0,
+    "incoming_meracare_visit": 0,
+    "incoming_user_onboarded": 0,
+    "motivations": {}
+  }
+}
