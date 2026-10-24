@@ -34,16 +34,35 @@ const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3005;
 const HOST = process.env.HOST || '0.0.0.0';
 
-// Middlewares
-const allowedOrigin = process.env.ALLOWED_ORIGIN;
-app.use(cors({
-  origin: allowedOrigin
-    ? (allowedOrigin === '*' ? true : [allowedOrigin, 'https://mycaremap.in', 'https://meracare.in', 'http://localhost:3000', 'http://localhost:3002', 'http://localhost:3004'])
-    : true,
+// Middlewares & CORS Configuration
+const allowedOriginEnv = process.env.ALLOWED_ORIGIN;
+const corsOptions: cors.CorsOptions = {
+  origin: (origin, callback) => {
+    // Allow non-browser requests (mobile, server-to-server, curl)
+    if (!origin) return callback(null, true);
+    // Allow mycaremap domains, meracare domains, localhost, or explicit ALLOWED_ORIGIN
+    if (
+      origin.endsWith('mycaremap.in') ||
+      origin.endsWith('meracare.in') ||
+      origin.includes('localhost') ||
+      origin.includes('127.0.0.1') ||
+      (allowedOriginEnv && (allowedOriginEnv === '*' || origin === allowedOriginEnv))
+    ) {
+      return callback(null, true);
+    }
+    // Permissive fallback
+    return callback(null, true);
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+  exposedHeaders: ['Content-Range', 'X-Content-Range'],
+  maxAge: 86400 // 24 hours preflight cache
+};
+
+app.use(cors(corsOptions));
+// Handle preflight OPTIONS requests for all paths immediately (prevents preflight redirect/404 issues)
+app.options('*', cors(corsOptions));
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
@@ -53,15 +72,15 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   const start = Date.now();
   res.on('finish', () => {
     const duration = Date.now() - start;
-    if (req.path.startsWith('/api') && req.path !== '/api/health') {
+    if (req.path !== '/api/health' && req.path !== '/health') {
       console.log(`[API] ${req.method} ${req.path} ${res.statusCode} - ${duration}ms`);
     }
   });
   next();
 });
 
-// Health check endpoint
-app.get('/api/health', (req: Request, res: Response) => {
+// Health check handler
+const handleHealthCheck = (req: Request, res: Response) => {
   try {
     const state = getCareState();
     const completeness = calculateCompleteness(state);
@@ -80,9 +99,14 @@ app.get('/api/health', (req: Request, res: Response) => {
   } catch (err) {
     res.status(500).json({ status: 'unhealthy', error: String(err) });
   }
-});
+};
 
-// Mount modular API routes
+app.get('/api/health', handleHealthCheck);
+app.get('/health', handleHealthCheck);
+app.get('/', handleHealthCheck);
+
+// Mount modular API routes (Both /api/* and root /* for universal compatibility)
+// 1. Prefixed under /api/
 app.use('/api/caremap', caremapRouter);
 app.use('/api/commitments', commitmentsRouter);
 app.use('/api/appointments', appointmentsRouter);
@@ -98,16 +122,29 @@ app.use('/api/analytics', analyticsRouter);
 app.use('/api/audit', auditRouter);
 app.use('/api/auth', authRouter);
 
-// Serve static build in production
-if (process.env.NODE_ENV === 'production') {
-  const distPath = path.resolve(__dirname, '../dist');
-  app.use(express.static(distPath));
-  app.get('*', (req: Request, res: Response) => {
-    if (!req.path.startsWith('/api')) {
-      res.sendFile(path.resolve(distPath, 'index.html'));
-    }
+// 2. Also mounted directly at root level so calls to /auth/register, /caremap, etc. work seamlessly
+app.use('/caremap', caremapRouter);
+app.use('/commitments', commitmentsRouter);
+app.use('/appointments', appointmentsRouter);
+app.use('/providers', providersRouter);
+app.use('/places', placesRouter);
+app.use('/records', recordsRouter);
+app.use('/instructions', instructionsRouter);
+app.use('/family', familyRouter);
+app.use('/inbox', inboxRouter);
+app.use('/signals', signalsRouter);
+app.use('/ask', askRouter);
+app.use('/analytics', analyticsRouter);
+app.use('/audit', auditRouter);
+app.use('/auth', authRouter);
+
+// 404 Handler for unknown endpoints
+app.use('*', (req: Request, res: Response) => {
+  res.status(404).json({
+    success: false,
+    error: `Endpoint not found: ${req.method} ${req.originalUrl}`
   });
-}
+});
 
 // Global error handler
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
